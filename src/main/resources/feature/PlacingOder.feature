@@ -3,10 +3,6 @@ Feature: Placingorder
 Background: open browser
 Given  I have browser with jain book agency
 
-Scenario: Add to cart
-When I should select book and add to cart
-Then I should remove book from cart
-
 Scenario: Selecting payment method 
 When  I should select book and I should add to cart and I should select location 'Andhra Pradesh' and I should login 'karanammahesh321@gmail.com','Mahesh1234' and I should select payment method  
 Then Assert on presence of element 'PayPal/ Credit / Debit / ATM Card'
@@ -19,7 +15,11 @@ Then Assert on presence of book '0'
 
 Scenario: Check user is able to subscribe to news letter 
 When  I should click on subscription and I should enter my mail 'mubv1234@gmail.com' 
-Then I should check subscriber mail is present or not 'mubv1234@gmail.com'  
+Then I should check subscriber mail is present or not 'mubv1234@gmail.com'
+
+Scenario: Add to cart
+When I should select book and add to cart
+Then I should remove book from cart  
 
 Scenario: Click on logout 
 When  I should login 'karanammahesh321@gmail.com','Mahesh1234' with valid crediential  

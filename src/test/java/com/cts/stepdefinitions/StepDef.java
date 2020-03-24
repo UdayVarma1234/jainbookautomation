@@ -20,16 +20,6 @@ public class StepDef {
 		this.driver = LaunchWebdriver.driver;
 	}
 
-	@When("I should select book and add to cart")
-	public void i_should_select_book_and_add_to_cart(WebDriver driver) throws Throwable {
-		HomePage.addtoCart(driver);
-	}
-
-	@Then("I should remove book from cart")
-	public void i_should_remove_book_from_cart(WebDriver driver) {
-		CartPage.removeCart(driver);
-	}
-
 	@When("I should select book and I should add to cart and I should select location {string} and I should login {string},{string} and I should select payment method")
 	public void i_should_select_book_and_I_should_add_to_cart_and_I_should_select_location_and_I_should_login_and_I_should_select_payment_method(
 			String string, String string2, String string3) throws Throwable {
@@ -66,6 +56,16 @@ public class StepDef {
 	public void i_should_check_subscriber_mail_is_present_or_not(String string) {
 		HomePage.mailPresent(driver, string);
 
+	}
+
+	@When("I should select book and add to cart")
+	public void i_should_select_book_and_add_to_cart() throws Throwable {
+	  HomePage.addtoCart(driver);
+	}
+
+	@Then("I should remove book from cart")
+	public void i_should_remove_book_from_cart() {
+		CartPage.removeCart(driver);
 	}
 
 	@When("I should login {string},{string} with valid crediential")

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CartPage {
 	
-	public static By cartLoc = By.xpath("//a[contains(@onclick,'removeitemfromcart(246365);return false;')]");
+	public static By cartLoc = By.xpath("//i[@class='glyphicon glyphicon-remove remove-btn']");
 	public static By selectLoc = By.id("maincontent_Button5");
 	public static By selectLoc1 = By.id("ContentPlaceHolder1_TextBox1");
 	public static By selectLoc2 = By.id("ContentPlaceHolder1_TextBox2");
