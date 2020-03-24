@@ -1,7 +1,5 @@
 package com.cts.Pages;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +20,5 @@ public class OrderPage {
 		} else {
               Assert.fail("not present");
 		}
-		driver.quit();
 	}
 }

@@ -16,7 +16,6 @@ public class CartPage {
 	{
 		driver.findElement(cartLoc).click();
 		driver.switchTo().alert().accept();
-		driver.quit();
 	}
 	public static void selectLocation(WebDriver driver ,String location,String user,String pass) throws InterruptedException 
 	{

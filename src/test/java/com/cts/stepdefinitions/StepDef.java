@@ -33,17 +33,19 @@ public class StepDef {
 	@Then("Assert on presence of element {string}")
 	public void assert_on_presence_of_element(String string) {
 		OrderPage.paymentAssertion(driver, string);
+		LaunchWebdriver.termination();
 
 	}
 
 	@When("I should click on hotbargin and I should click on search and enter the book title {string}")
-	public void i_should_click_on_hotbargin_and_I_should_click_on_search_and_enter_the_book_title(String string) {
+	public void i_should_click_on_hotbargin_and_I_should_click_on_search_and_enter_the_book_title(String string) throws Throwable {
 		HomePage.clickHotBargin(driver, string);
 	}
 
 	@Then("Assert on presence of book {string}")
-	public void assert_on_presence_of_book(String string) {
+	public void assert_on_presence_of_book(String string) throws Throwable {
 		HomePage.bookAssert(driver, string);
+		LaunchWebdriver.termination();
 
 	}
 
@@ -55,7 +57,7 @@ public class StepDef {
 	@Then("I should check subscriber mail is present or not {string}")
 	public void i_should_check_subscriber_mail_is_present_or_not(String string) {
 		HomePage.mailPresent(driver, string);
-
+        LaunchWebdriver.termination();
 	}
 
 	@When("I should select book and add to cart")
@@ -66,6 +68,7 @@ public class StepDef {
 	@Then("I should remove book from cart")
 	public void i_should_remove_book_from_cart() {
 		CartPage.removeCart(driver);
+		LaunchWebdriver.termination();
 	}
 
 	@When("I should login {string},{string} with valid crediential")
@@ -76,6 +79,7 @@ public class StepDef {
 	@Then("I should logout from the page")
 	public void i_should_logout_from_the_page() {
 		HomePage.logout(driver);
+		LaunchWebdriver.termination();
 	}
 
 }

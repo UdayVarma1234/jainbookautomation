@@ -1,5 +1,6 @@
 package com.cts.Pages;
 
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,27 +27,26 @@ public class HomePage {
 		driver.findElement(cartLoc2).click();
 	}
 
-	public static void clickHotBargin(WebDriver driver, String title) {
+	public static void clickHotBargin(WebDriver driver, String title) throws Throwable {
 		driver.findElement(barginLoc).click();
 		driver.findElement(barginLoc1).sendKeys(title);
+		driver.findElement(By.id("Button1")).click();
+		Thread.sleep(2000);
 
 	}
 
-	public static void bookAssert(WebDriver driver, String book) {
+	public static void bookAssert(WebDriver driver, String book) throws Throwable {
 		if (Integer.parseInt(book)< Integer.parseInt(((driver.findElement(bookLoc).getText())))) {
-			System.out.println(book);
+			System.out.println(Integer.parseInt(((driver.findElement(bookLoc).getText()))));
 		} else {
 			Assert.fail(book);
 		}
-		driver.quit();
 	}
 
 	public static void logout(WebDriver driver) {
-		//driver.findElement(By.className("dropdown")).click();
 		Actions act=new Actions(driver);
 		act.pause(3000).moveToElement(driver.findElement(logoutLoc)).pause(3000).build().perform();
 		driver.findElement(logoutLoc1).click();
-		driver.quit();
 	}
 
 	public static void subscription(WebDriver driver, String mail) {
@@ -62,6 +62,6 @@ public class HomePage {
 		{
 			Assert.fail("given mail is not present");
 		}
-		driver.quit();
+	
 	}
 }
