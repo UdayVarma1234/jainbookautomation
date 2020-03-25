@@ -6,18 +6,18 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CartPage {
 	
-	public static By cartLoc = By.xpath("//i[@class='glyphicon glyphicon-remove remove-btn']");
-	public static By selectLoc = By.id("maincontent_Button5");
-	public static By selectLoc1 = By.id("ContentPlaceHolder1_TextBox1");
-	public static By selectLoc2 = By.id("ContentPlaceHolder1_TextBox2");
-	public static By selectLoc3 = By.id("ContentPlaceHolder1_btnlogin");
+	public    By cartLoc = By.xpath("//i[@class='glyphicon glyphicon-remove remove-btn']");
+	public    By selectLoc = By.id("maincontent_Button5");
+	public    By selectLoc1 = By.id("ContentPlaceHolder1_TextBox1");
+	public    By selectLoc2 = By.id("ContentPlaceHolder1_TextBox2");
+	public    By selectLoc3 = By.id("ContentPlaceHolder1_btnlogin");
 			
-	public static void removeCart(WebDriver driver)
+	public    void removeCart(WebDriver driver)
 	{
 		driver.findElement(cartLoc).click();
 		driver.switchTo().alert().accept();
 	}
-	public static void selectLocation(WebDriver driver ,String location,String user,String pass) throws InterruptedException 
+	public    void selectLocation(WebDriver driver ,String location,String user,String pass) throws InterruptedException 
 	{
 	Select sle=new Select(driver.findElement(By.id("ContentPlaceHolder1_DropDownList1")));
 	sle.selectByVisibleText(location);

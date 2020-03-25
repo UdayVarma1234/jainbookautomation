@@ -11,9 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LaunchWebdriver {
 
-	public static WebDriver driver;
+	public  WebDriver driver;
 
-	public static void setup() {
+	public  void setup() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -21,7 +21,7 @@ public class LaunchWebdriver {
 		driver.get("https://www.jainbookagency.com/");
 	}
 
-	public static void termination() {
+	public void termination() {
 		Date date = new Date();
 		String datestr = date.toString().replace(":", "-");
 
