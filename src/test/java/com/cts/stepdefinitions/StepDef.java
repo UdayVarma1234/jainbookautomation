@@ -13,7 +13,6 @@ import io.cucumber.java.en.When;
 
 public class StepDef {
 	WebDriver driver;
-	
 	LaunchWebdriver LU = new LaunchWebdriver();
 	HomePage HP = new HomePage();
 	CartPage CP = new CartPage();
@@ -44,14 +43,15 @@ public class StepDef {
 	}
 
 	@When("I should click on hotbargin and I should click on search and enter the book title {string}")
-	public void i_should_click_on_hotbargin_and_I_should_click_on_search_and_enter_the_book_title(String string) throws Throwable {
+	public void i_should_click_on_hotbargin_and_I_should_click_on_search_and_enter_the_book_title(String string)
+			throws Throwable {
 		HP.clickHotBargin(driver, string);
 	}
 
 	@Then("Assert on presence of book {string}")
 	public void assert_on_presence_of_book(String string) throws Throwable {
 		HP.bookAssert(driver, string);
-	  LU.termination();
+		LU.termination();
 
 	}
 
@@ -63,12 +63,12 @@ public class StepDef {
 	@Then("I should check subscriber mail is present or not {string}")
 	public void i_should_check_subscriber_mail_is_present_or_not(String string) {
 		HP.mailPresent(driver, string);
-        LU.termination();
+		LU.termination();
 	}
 
 	@When("I should select book and add to cart")
 	public void i_should_select_book_and_add_to_cart() throws Throwable {
-	  HP.addtoCart(driver);
+		HP.addtoCart(driver);
 	}
 
 	@Then("I should remove book from cart")

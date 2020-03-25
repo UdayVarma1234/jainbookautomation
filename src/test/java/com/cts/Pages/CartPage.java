@@ -17,7 +17,7 @@ public class CartPage {
 		driver.findElement(cartLoc).click();
 		driver.switchTo().alert().accept();
 	}
-	public    void selectLocation(WebDriver driver ,String location,String user,String pass) throws InterruptedException 
+	public   void selectLocation(WebDriver driver ,String location,String user,String pass) throws InterruptedException 
 	{
 	Select sle=new Select(driver.findElement(By.id("ContentPlaceHolder1_DropDownList1")));
 	sle.selectByVisibleText(location);
