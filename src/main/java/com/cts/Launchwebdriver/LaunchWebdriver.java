@@ -28,7 +28,6 @@ public class LaunchWebdriver {
 	public void termination() {
 		Date date = new Date();
 		String datestr = date.toString().replace(":", "-");
-
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File file = ts.getScreenshotAs(OutputType.FILE);
 		file.renameTo(new File("src/test/resources/screenshot/image" + datestr + ".png"));
