@@ -18,7 +18,7 @@ public class CartPage {
 		driver.switchTo().alert().accept();
 	}
 
-	// Selecting location and loging in for ordering item
+	// Selecting location and login in for ordering item
 	public void selectLocation(WebDriver driver, String location, String user, String pass)
 			throws InterruptedException {
 		Select sle = new Select(driver.findElement(By.id("ContentPlaceHolder1_DropDownList1")));

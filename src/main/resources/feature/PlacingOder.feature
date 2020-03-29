@@ -22,5 +22,5 @@ When I should select book and add to cart
 Then I should remove book from cart  
 
 Scenario: Click on logout 
-When  I should login 'karanammahesh321@gmail.com','Mahesh1234' with valid crediential  
+When  I enter wrong login details from Excel "src/test/resources/Excel/jainbook.xlsx" with SheetName "validcrediential"
 Then I should logout from the page 
